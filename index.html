@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulte o endereço pelo CEP e veja o clima atual e a previsão do tempo.">
+   <!-- Favicon para formatos padrão (ICO, PNG ou GIF) -->
+    <link rel="icon" type="image/x-icon" href="images/gti_icon.ico">
+  <title>GTI Clima</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="home">
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="GTI Clima - início">
+        <span class="brand-icon" aria-hidden="true">🌦️</span>
+        <span>GTI <strong>| Consulta Clima Brasil</strong></span>
+    </a>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Ativar tema escuro">
+      <span id="themeIcon" aria-hidden="true">🌙</span>
+      <span id="themeLabel">Tema escuro</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">INFORMAÇÃO EM UM SÓ LUGAR</p>
+      <h1><span class="gradient-text">CEP e clima da sua região</span></h1>
+      <p class="subtitle">Informe um CEP brasileiro para consultar o endereço, as condições atuais e a previsão para os próximos dias.</p>
+
+      <form id="cepForm" class="search-form">
+        <label for="cepInput">CEP</label>
+        <div class="search-row">
+          <input id="cepInput" name="cep" type="text" inputmode="numeric"
+                 autocomplete="postal-code" placeholder="Ex.: 02996-180"
+                 maxlength="9" aria-describedby="cepHelp" required>
+          <button id="searchButton" type="submit">Consultar clima</button>
+        </div>
+        <small id="cepHelp">Digite os 8 números do CEP, com ou sem hífen.</small>
+      </form>
+      <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="results" class="results" hidden>
+      <div class="location-heading">
+        <div>
+          <p class="eyebrow">LOCALIZAÇÃO CONSULTADA</p>
+          <h2 id="locationName">—</h2>
+          <p id="locationAddress" class="muted">—</p>
+        </div>
+        <span id="locationCep" class="cep-chip">CEP —</span>
+      </div>
+
+      <section class="current-section" aria-labelledby="currentTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">AGORA</p>
+            <h2 id="currentTitle">Condições atuais</h2>
+          </div>
+          <p id="updatedAt" class="muted"></p>
+        </div>
+
+        <article class="current-card">
+          <div class="weather-main">
+            <span id="currentIcon" class="weather-icon" aria-hidden="true">🌤️</span>
+            <div>
+              <p id="currentDescription" class="weather-description">—</p>
+              <p class="temperature"><span id="currentTemp">—</span><span>°C</span></p>
+              <p class="feels-like">Sensação térmica: <strong id="feelsLike">—</strong>°C</p>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-icon" aria-hidden="true">💧</span>
+              <span class="metric-label">Umidade</span>
+              <strong id="humidity">—</strong>
+            </div>
+            <div class="metric">
+              <span class="metric-icon" aria-hidden="true">🌧️</span>
+              <span class="metric-label">Precipitação</span>
+              <strong id="precipitation">—</strong>
+            </div>
+            <div class="metric">
+              <span class="metric-icon" aria-hidden="true">💨</span>
+              <span class="metric-label">Vento</span>
+              <strong id="wind">—</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="forecast-section" aria-labelledby="forecastTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PRÓXIMOS DIAS</p>
+            <h2 id="forecastTitle">Previsão para 5 dias</h2>
+          </div>
+        </div>
+        <div id="forecastGrid" class="forecast-grid"></div>
+      </section>
+      <p class="attribution">Dados meteorológicos: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>. Endereço e coordenadas: <a href="https://docs.awesomeapi.com.br/api-cep" target="_blank" rel="noopener noreferrer">AwesomeAPI</a>.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Projeto demonstrativo desenvolvido com HTML, CSS e JavaScript.</p>
+
+    <div class="container footer-inner">
+        <a class="brand" href="#home" aria-label="GTI Clima - voltar ao topo">
+            <span class="brand-mark">Gouveia</span>
+            <span>TI<span class="accent">.</span></span>
+        </a>
+        <p>© <span id="current-year">_</span> Eduardo Gouveia. Feito com intenção.</p>
+        <a class="back-top" href="#home" aria-label="Voltar ao topo">↑</a>
+    </div>
+</footer>
+
+</body>
+</html>
