@@ -1,4 +1,5 @@
-# Consulta Brasil — CEP e Clima
+# GTI | Consulta Clima Brasil
+Consulte o endereço pelo CEP e veja o clima atual e a previsão do tempo.
 
 Projeto de estudo feito com HTML, CSS e JavaScript puro. Consulta um CEP pela AwesomeAPI e usa as coordenadas retornadas para solicitar as condições atuais e a previsão de cinco dias ao Open-Meteo.
 
@@ -31,3 +32,4 @@ As APIs são serviços externos e podem ter limites, indisponibilidade ou altera
 ## Publicar
 
 Pode ser publicado como site estático no GitHub Pages, Netlify ou Vercel. Não há backend próprio neste projeto.
+
