@@ -2,7 +2,9 @@
 Consulte o endereço pelo CEP e veja o clima atual e a previsão do tempo.
 
 Projeto de estudo feito com HTML, CSS e JavaScript puro. Consulta um CEP pela AwesomeAPI e usa as coordenadas retornadas para solicitar as condições atuais e a previsão de cinco dias ao Open-Meteo.
+
 https://edugouveia.github.io/gticlima/
+
 ## Recursos
 
 - Consulta de CEP brasileiro.
